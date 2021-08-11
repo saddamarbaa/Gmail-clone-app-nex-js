@@ -5,7 +5,7 @@ import firebase from "firebase";
 const firebaseConfig = {
 	apiKey: "AIzaSyArUCMZQf2PQJvOSyqJl5FFlThkk1GluX0",
 
-	authDomain: "email-clone-app.firebaseapp.com",
+	authDomain: "https://gmail-clone-app.vercel.app/",
 
 	projectId: "email-clone-app",
 
