@@ -5,12 +5,19 @@ import Widget from "../components/widget";
 import Head from "next/head";
 import Feed from "../components/feed";
 import styled from "styled-components";
-import Layout from "../components/Layout";
-
+import Header from "../components/header";
 import { auth } from "../config/firebase";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import db from "../config/firebase";
+
+import SendEmail from "../components/sendMail";
+
+import {
+	setShowComposeState,
+	setHideComposeState,
+	selectSendMail,
+} from "../features/sendMail/sendMailSlice";
 
 import {
 	setLogInState,
@@ -74,27 +81,31 @@ const HomePage = (props) => {
 		};
 	}, []);
 
+	const showCompose = useSelector(selectSendMail);
+
 	if (!user) {
 		return <LogIn />;
 	}
 
 	return (
-		<Layout>
-			<div>
-				<Head>
-					<title>Gmail Clone app</title>
-					<meta
-						name='description'
-						content='Gmail Clone app Build With React Js + Next Js'
-					/>
-				</Head>
+		<div>
+			<Head>
+				<title>Gmail Clone app</title>
+				<meta
+					name='description'
+					content='Gmail Clone app Build With React Js + Next Js'
+				/>
+			</Head>
+			<AppWrapper>
+				<Header />
 				<MinWrapper className='app-bod'>
 					<Sidebar allEmails={allEmails} />
 					<Feed allEmails={allEmails} />
 					<Widget />
 				</MinWrapper>
-			</div>
-		</Layout>
+				{showCompose && <SendEmail />}
+			</AppWrapper>
+		</div>
 	);
 };
 
@@ -107,4 +118,11 @@ const MinWrapper = styled.div`
 	min-height: 85vh;
 	width: 100%;
 	border-left: 0;
+`;
+
+const AppWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	min-height: 100vh;
 `;
