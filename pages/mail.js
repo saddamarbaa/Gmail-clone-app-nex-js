@@ -8,34 +8,44 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/user/userSlice";
-
+import Header from "../components/header";
 import LogIn from "./login";
+
+import SendEmail from "../components/sendMail";
+
+import {
+	setShowComposeState,
+	setHideComposeState,
+	selectSendMail,
+} from "../features/sendMail/sendMailSlice";
 
 function MailPage(props) {
 	const user = useSelector(selectUser);
+	const showCompose = useSelector(selectSendMail);
 
 	if (!user) {
 		return <LogIn />;
 	}
 
 	return (
-		<Layout>
-			<div>
-				<Head>
-					<title>Gmail Clone app</title>
-					<meta
-						name='description'
-						content='Gmail Clone app Build With React Js + Next Js'
-					/>
-				</Head>
+		<div>
+			<Head>
+				<title>Gmail Clone app</title>
+				<meta
+					name='description'
+					content='Gmail Clone app Build With React Js + Next Js'
+				/>
+			</Head>
+			<AppWrapper>
+				<Header />
 				<MinWrapper className='app-bod'>
 					<Sidebar />
 					<IndividualMail />
-
 					<Widget />
 				</MinWrapper>
-			</div>
-		</Layout>
+				{showCompose && <SendEmail />}
+			</AppWrapper>
+		</div>
 	);
 }
 
@@ -48,4 +58,11 @@ const MinWrapper = styled.div`
 	min-height: 85vh;
 	width: 100%;
 	border-left: 0;
+`;
+
+const AppWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	min-height: 100vh;
 `;

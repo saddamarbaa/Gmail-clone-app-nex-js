@@ -8,7 +8,6 @@ import { auth, provider } from "../config/firebase";
 import { useRouter } from "next/router";
 
 const LogIn = () => {
-	
 	const router = useRouter();
 
 	const signInWithGoogleHandler = () => {
@@ -71,14 +70,12 @@ const LoginContainer = styled.div`
 		margin-left: 1.5rem;
 		margin-bottom: 2rem;
 	}
-
 	padding: 100px;
 	padding-top: 50px;
 	text-align: center;
 	background-color: white;
 	border-radius: 6px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-
 	/* Overwrite material-ui styling */
 	button {
 		margin-top: 50px;
