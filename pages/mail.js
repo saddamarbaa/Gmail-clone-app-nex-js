@@ -5,7 +5,6 @@ import Widget from "../components/widget";
 import Head from "next/head";
 import IndividualMail from "../components/individualMail";
 import styled from "styled-components";
-import Layout from "../components/Layout";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/user/userSlice";
 import Header from "../components/header";
