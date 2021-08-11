@@ -3,7 +3,7 @@
 import Sidebar from "../components/Sidebar";
 import Widget from "../components/widget";
 import Head from "next/head";
-import IndividualMail from "../components/IndividualMail";
+import IndividualMail from "../components/individualMail";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { useSelector } from "react-redux";
