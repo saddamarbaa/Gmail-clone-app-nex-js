@@ -3,17 +3,17 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-	apiKey: process.env.apiKey,
+	apiKey: "AIzaSyArUCMZQf2PQJvOSyqJl5FFlThkk1GluX0",
 
-	authDomain: process.env.auth,
+	authDomain: "email-clone-app.firebaseapp.com",
 
-	projectId: process.env.projectId,
+	projectId: "email-clone-app",
 
-	storageBucket: process.env.storageBucket,
+	storageBucket: "email-clone-app.appspot.com",
 
-	messagingSenderId: process.env.messagingSenderId,
+	messagingSenderId: "1057375020112",
 
-	appId: process.env.appId,
+	appId: "1:1057375020112:web:10a8f6e3efa94ae5501d55",
 };
 
 const firebaseApp = !firebase.apps.length
