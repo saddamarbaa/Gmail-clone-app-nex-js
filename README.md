@@ -1,3 +1,201 @@
+# LinkedIn Clone
+
+ Building Gmail Clone App with React Js, Next Js, Redux, Styled Component, 
+ Material-UI, Firebase Realtime Database, Vercel Hosting, 
+ with complete user authentication (a mobile-friendly).
+
+  
+   
+# Table of contents
+
+-  [Author](#Author)
+-  [Demo](#Demo)
+-  [Technologies](#Technologies)
+-  [Features](#Features)
+-  [Optimizations](#Optimizations)
+-  [Contributing](#Contributing)
+-  [Status](#status)
+-  [Inspiration](#inspiration)
+-  [Support](#Support)
+-  [Feedback](#Feedback)
+-  [Run Locally](#Run_Locally)
+-  [Environment Variables](#Environment)
+-  [Screenshots](#Screenshots)
+
+
+
+# Author
+
+### <a href="https://github.com/saddamarbaa">@Saddam Arbaa</a>
+
+
+
+# Technologies
+
+**Client:**
+
+-  React Js
+-  Next Js
+-  Redux
+-  Styled Component
+-  Material-UI
+
+**Server:**
+
+-  Firebase Realtime Database
+-  Firebase Hosting
+-  Firebase Google Authentication
+
+
+# Demo
+
+## <a href="https://gmail-clone-app.vercel.app/">LIVE DEMO</a>
+
+
+
+
+
+# Features
+
+-  Complete user authentication users can sign in, sign out
+-  Send emails
+
+
+
+
+
+
+#  Optimizations
+-  Next' Js Image component
+-  Next' Js file-system based router
+-  Next' Js Server-side rendering
+-  Memoization (useMemo, Memo)
+-  Function components
+-  React hooks
+-  React useEffect cleanup
+
+
+
+# Contributing
+
+Contributions are always welcome!
+
+
+# Support
+
+For support, email saddamarbaas@gmail.com.
+
+
+# Feedback
+
+If you have any feedback, please reach out to me at saddamarbaas@gmail.com
+
+Twitter
+https://twitter.com/ArbaaSaddam/
+
+Linkedin.
+https://www.linkedin.com/in/saddamarbaa/
+
+Github
+https://github.com/saddamarbaa
+
+Instagram
+https://www.instagram.com/saddam.dev/
+
+Facebook
+https://www.facebook.com/saddam.arbaa
+
+
+
+# Run_Locally
+
+Clone the project
+
+```bash
+  https://github.com/saddamarbaa/Gmail-clone-app-nex-js
+```
+
+Go to the project directory
+
+```bash
+  cd Gmail-clone-app-nex-js
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+# Environment
+
+- To run this project, you will need to create a new project on firebase, setup Firebase Realtime Database and add the following environment variables to your next.config.js
+
+-  REACT_APP_FIREBASE_API_KEY
+-  REACT_APP_AUTH_DOMAIN
+-  REACT_APP_STORAGE_BUCKET
+-  REACT_APP_PROJECT_ID
+-  REACT_APP_MESSAIN_SENDER_ID
+-  REACT_APP_APPID
+
+
+# Status
+
+Project is now complete in (React js + Next js) so my next step I would love to converted to React + TypeScript + Next.js + Node.js + Express + MongoDB
+
+
+# Inspiration
+
+Build By Saddam Arbaa Project inspired by [Gmail] https://mail.google.com/
+
+
+
+
+# Screenshots
+
+##  Responsive on large screens - Home Page 
+
+![image](https://user-images.githubusercontent.com/51326421/130052876-8337a5bb-c539-40db-b480-a166c5d7a4dc.png)
+
+
+![image](https://user-images.githubusercontent.com/51326421/130052973-9128d106-f433-4ec1-b42a-6f7f7ec1e07d.png)
+
+
+
+![image](https://user-images.githubusercontent.com/51326421/130053059-c2254296-73b6-4f8a-a4df-0e9d57a1d00e.png)
+
+
+
+
+## Responsive on mobile and tablet screens 
+![image](https://user-images.githubusercontent.com/51326421/130053167-0984ae62-00af-4c28-a55b-2c0a5df91a05.png)
+
+
+
+
+
+## LogIn Page
+
+![image](https://user-images.githubusercontent.com/51326421/130052734-86c95980-45c8-4a27-9c1a-65424e462403.png)
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
