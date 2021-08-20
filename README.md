@@ -1,4 +1,4 @@
-# LinkedIn Clone
+# Gmail Clone
 
  Building Gmail Clone App with React Js, Next Js, Redux, Styled Component, 
  Material-UI, Firebase Realtime Database, Vercel Hosting, 
@@ -149,7 +149,7 @@ yarn dev
 
 # Status
 
-Project is now complete in (React js + Next js) so my next step I would love to converted to React + TypeScript + Next.js + Node.js + Express + MongoDB
+Project is now complete in (React js + Next js) so my next step I would love to converted to (React + TypeScript + Next.js + Node.js + Express + MongoDB)
 
 
 # Inspiration
