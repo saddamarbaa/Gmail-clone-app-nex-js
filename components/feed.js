@@ -187,7 +187,6 @@ const FeedWrapper = styled.div`
 	flex: 1;
 	max-height: 100vh;
 	overflow-x: hidden !important;
-
 	.head {
 		display: flex;
 		align-items: center;
@@ -197,28 +196,23 @@ const FeedWrapper = styled.div`
 		border-bottom: 1px solid rgba(220, 227, 232);
 		font-size: 0.9rem;
 		min-width: 33rem;
-
 		.icon-head {
 			font-size: 1.2rem !important;
 		}
 	}
-
 	.content-heading {
 		@media (max-width: 568px) {
 			display: none;
 		}
-
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-
 		.heading {
 			transition: 0.3s;
 			width: 16rem;
 			display: flex;
 			align-items: center;
 			margin-right: 0 1rem;
-
 			p {
 				border: 0.1px solid #188038;
 				margin-left: 2rem;
@@ -227,69 +221,36 @@ const FeedWrapper = styled.div`
 				min-width: 4.3rem;
 				max-height: 2.2rem;
 			}
-
 			&:hover {
 				background: rgba(220, 227, 232);
 			}
 		}
-
 		.content-heading__promotion {
 			color: #188038;
 			border-bottom: 2px solid #188038;
-
 			.icon-heading {
 				color: #188038;
 			}
-
 			p {
 				border: 0.1px solid #188038;
 			}
 		}
-
 		.content-heading__social {
 			color: #1a73e8;
 			border-bottom: 2px solid #1a73e8;
-
 			.icon-heading {
 				color: #1a73e8;
 			}
-
 			p {
 				border: 0.1px solid #1a73e8;
 			}
 		}
-
 		.content-heading__primary {
 			color: #ea4335;
 			border-bottom: 2px solid #ea4335;
-
 			.icon-heading {
 				color: #ea4335;
 			}
 		}
 	}
 `;
-
-// export function getStaticProps(context) {
-// 	let setAllEmails = [];
-// 	db.collection("emails")
-// 		.orderBy("timestamp", "desc")
-// 		.limit(100)
-// 		.onSnapshot((snapshot) => {
-// 			setAllEmails.push(
-// 				snapshot.docs.map((doc) => {
-// 					console.log("doc.data()", db);
-// 					return {
-// 						data: doc.data(),
-// 						id: doc.id,
-// 					};
-// 				}),
-// 			);
-// 		});
-
-// 	console.log("db", db);
-
-// 	return {
-// 		props: setAllEmails,
-// 	};
-// }

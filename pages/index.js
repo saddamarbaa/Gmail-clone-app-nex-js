@@ -111,6 +111,27 @@ const HomePage = (props) => {
 
 export default HomePage;
 
+// This gets called on every request
+export async function getServerSideProps() {
+	const emailsRefs = await db
+		.collection("emails")
+		.orderBy("timestamp", "desc")
+		.limit(100)
+		.get();
+
+	const allEmails = await emailsRefs.docs.map((doc) => {
+		return {
+			...doc?.data(),
+			id: doc?.id,
+			// we have some problem in the time
+			timestamp: doc?.data()?.timestamp?.toDate()?.getTime(),
+		};
+	});
+
+	// Pass data to the page via props
+	return { props: { allEmails: allEmails } };
+}
+
 const MinWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;

@@ -11,7 +11,7 @@ import { setEmailState } from "../features/email/emailSlice";
 const Email = (props) => {
 	const dispatch = useDispatch();
 	const router = useRouter();
-	
+
 	const { name, message, background, date, subject } = props;
 
 	//  function to truncate(cut) the string if the length of given string
@@ -65,12 +65,10 @@ const EmailWrapper = styled.div`
 	cursor: pointer;
 	justify-content: space-between;
 	padding: 1rem;
-
 	&:hover {
 		background-color: white;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 	}
-
 	.headding-conent {
 		width: 16rem;
 		display: flex;
@@ -79,7 +77,6 @@ const EmailWrapper = styled.div`
 		margin-right: 1rem;
 		justify-content: space-between;
 	}
-
 	.mail__icons {
 		display: flex;
 		width: 4rem;
@@ -88,21 +85,18 @@ const EmailWrapper = styled.div`
 			display: none;
 		}
 	}
-
 	.mail-name {
 		margin-left: 0.7rem;
 		font-weight: bold;
 		overflow: hidden;
 		min-width: 10rem;
 	}
-
 	.mail__content {
 		overflow: hidden;
 		height: 1rem;
 		overflow: hidden;
 		min-width: 15rem;
 	}
-
 	.mail-date {
 		display: flex;
 		justify-content: flex-end;

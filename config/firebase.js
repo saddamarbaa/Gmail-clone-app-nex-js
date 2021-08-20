@@ -3,12 +3,12 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-	authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-	projectId: process.env.REACT_APP_PROJECT_ID,
-	storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-	messagingSenderId: process.env.REACT_APP_MESSAIN_SENDER_ID,
-	appId: process.env.REACT_APP_APPID,
+	apiKey: process.env.API_KEY,
+	authDomain: process.env.AUTH_DOMAIN,
+	projectId: process.env.PROJECT_ID,
+	storageBucket: process.env.STORAGE_BUCKET,
+	messagingSenderId: process.env.MESSAIN_SENDER_ID,
+	appId: process.env.APPID,
 };
 
 const firebaseApp = !firebase.apps.length
