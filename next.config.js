@@ -1,14 +1,29 @@
-/** @format */
+const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 
-module.exports = {
-	reactStrictMode: true,
+module.exports = (phase) => {
+	if (phase === PHASE_DEVELOPMENT_SERVER) {
+		return {
+			reactStrictMode: true,
+			env: {
+				API_KEY: process.env.API_KEY,
+				AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+				PROJECT_ID: process.env.PROJECT_ID,
+				STORAGE_BUCKET: process.env.STORAGE_BUCKET,
+				MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
+				APP_ID: process.env.APP_ID,
+			},
+		};
+	}
 
-	env: {
-		API_KEY: process.env.REACT_APP_FIREBASE_API_KEY,
-		AUTH_DOMAIN: process.env.REACT_APP_AUTH_DOMAIN,
-		PROJECT_ID: process.env.REACT_APP_PROJECT_ID,
-		STORAGE_BUCKET: process.env.REACT_APP_STORAGE_BUCKET,
-		MESSAIN_SENDER_ID: process.env.REACT_APP_MESSAIN_SENDER_ID,
-		APPID: process.env.REACT_APP_APPID,
-	},
+	return {
+		reactStrictMode: true,
+		env: {
+			API_KEY: process.env.API_KEY,
+			AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+			PROJECT_ID: process.env.PROJECT_ID,
+			STORAGE_BUCKET: process.env.STORAGE_BUCKET,
+			MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
+			APP_ID: process.env.APP_ID,
+		},
+	};
 };
