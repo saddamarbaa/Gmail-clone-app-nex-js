@@ -1,4 +1,4 @@
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 
 module.exports = (phase) => {
 	if (phase === PHASE_DEVELOPMENT_SERVER) {
@@ -12,7 +12,7 @@ module.exports = (phase) => {
 				MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
 				APP_ID: process.env.APP_ID,
 			},
-		};
+		}
 	}
 
 	return {
@@ -25,5 +25,5 @@ module.exports = (phase) => {
 			MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
 			APP_ID: process.env.APP_ID,
 		},
-	};
-};
+	}
+}
