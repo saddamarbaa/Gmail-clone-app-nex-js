@@ -1,109 +1,107 @@
-/** @format */
+import React from 'react'
+import styled from 'styled-components'
+import MenuIcon from '@material-ui/icons/Menu'
+import Image from 'next/image'
+import BorderClearIcon from '@material-ui/icons/BorderClear'
+import HelpIcon from '@material-ui/icons/Help'
+import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh'
+import { Avatar, IconButton } from '@material-ui/core'
+import SearchIcon from '@material-ui/icons/Search'
+import SendIcon from '@material-ui/icons/Send'
+import { useRouter } from 'next/router'
 
-import React from "react";
-import styled from "styled-components";
-import MenuIcon from "@material-ui/icons/Menu";
-import Image from "next/image";
-import BorderClearIcon from "@material-ui/icons/BorderClear";
-import HelpIcon from "@material-ui/icons/Help";
-import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
-import { Avatar, IconButton } from "@material-ui/core";
-import SearchIcon from "@material-ui/icons/Search";
-import SendIcon from "@material-ui/icons/Send";
-import { useRouter } from "next/router";
-import { auth } from "../config/firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { setLogOutState, selectUser } from "../features/user/userSlice";
+import { auth } from '../config/firebase'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLogOutState, selectUser } from '../features/user/userSlice'
 
 const Header = () => {
-	const user = useSelector(selectUser);
-	const dispatch = useDispatch();
-	const router = useRouter();
+	const user = useSelector(selectUser)
+	const dispatch = useDispatch()
+	const router = useRouter()
 
 	const userSignedOutHandler = () => {
-		// User is signed out(Remove the user from Firebase)
 		if (user) {
 			auth
 				.signOut()
-				.then(() => {
-					// Sign-out successful.
+				.then(() => {})
+				.catch((error: any) => {
+					const errorCode = error?.code
+					const errorMessage = error?.message
+					alert(errorMessage)
 				})
-				.catch((error) => {
-					// An error happened.
-				});
-			router.replace("/login");
-			dispatch(setLogOutState());
+
+			dispatch(setLogOutState())
+			router.replace('/login')
 		}
-	};
+	}
 
 	return (
-		<HeaderWrapper style={{ position: "sticky" }}>
+		<HeaderWrapper style={{ position: 'sticky' }}>
 			<nav>
-				<div className='header__left'>
-					<IconButton className='hid-s'>
+				<div className="header__left">
+					<IconButton className="hid-s">
 						<MenuIcon />
 					</IconButton>
 
 					<div
-						className='logo'
+						className="logo"
 						style={{
-							position: "relative",
-							cursor: "pointer",
+							position: 'relative',
+							cursor: 'pointer',
 						}}>
 						<Image
-							className='logo-img'
-							src='/images/logo_gmail.png'
-							alt='logo'
-							layout='fill'
-							objectFit='contain'
+							className="logo-img"
+							src="/images/logo_gmail.png"
+							alt="logo"
+							layout="fill"
+							objectFit="contain"
 						/>
 					</div>
 				</div>
 
-				<div className='header__middle'>
+				<div className="header__middle">
 					<IconButton>
 						<SearchIcon />
 					</IconButton>
 
-					<form autoComplete='off'>
-						<label htmlFor='search'></label>
+					<form autoComplete="off">
+						<label htmlFor="search"></label>
 						<input
-							type='email'
-							id='search'
-							name='search'
-							placeholder='Search mail'
-							autoComplete='search'
-							minLength='2'></input>
+							type="email"
+							id="search"
+							name="search"
+							placeholder="Search mail"
+							autoComplete="search"
+							minLength={2}
+						/>
 					</form>
 					<IconButton>
 						<SendIcon />
 					</IconButton>
 				</div>
-				<div className='header__right'>
-					<IconButton className='icons'>
+				<div className="header__right">
+					<IconButton className="icons">
 						<BrightnessHighIcon />
 					</IconButton>
 
-					<IconButton className='icons'>
+					<IconButton className="icons">
 						<HelpIcon />
 					</IconButton>
 
-					<IconButton className='icons'>
+					<IconButton className="icons">
 						<BorderClearIcon />
 					</IconButton>
 
-					<IconButton
-						className='avatar icons'
-						onClick={userSignedOutHandler}>
+					<IconButton className="avatar icons" onClick={userSignedOutHandler}>
 						<Avatar src={user?.photoURL} />
 					</IconButton>
 				</div>
 			</nav>
 		</HeaderWrapper>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header
 
 const HeaderWrapper = styled.header`
 	height: 4rem;
@@ -209,4 +207,4 @@ const HeaderWrapper = styled.header`
 			}
 		}
 	}
-`;
+`

@@ -1,24 +1,22 @@
-/** @format */
+import React from 'react'
+import styled from 'styled-components'
+import CheckBoxOutlineBlankRoundedIcon from '@material-ui/icons/CheckBoxOutlineBlankRounded'
+import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded'
+import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
+import { setEmailState } from '../features/email/emailSlice'
+import { truncate } from '../utils'
 
-import React from "react";
-import styled from "styled-components";
-import CheckBoxOutlineBlankRoundedIcon from "@material-ui/icons/CheckBoxOutlineBlankRounded";
-import StarBorderRoundedIcon from "@material-ui/icons/StarBorderRounded";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
-import { setEmailState } from "../features/email/emailSlice";
-
-const Email = (props) => {
-	const dispatch = useDispatch();
-	const router = useRouter();
-
-	const { name, message, background, date, subject } = props;
-
-	//  function to truncate(cut) the string if the length of given string
-	//   bigger than  given number(n)
-	const truncate = (string, n) => {
-		return string?.length > n ? string.substr(0, n - 1) + "    ...." : string;
-	};
+type Props = {
+	name: string
+	subject?: string
+	message: string
+	background?: boolean
+	date: string
+}
+const Email = ({ name, message, background, date, subject = '' }: Props) => {
+	const dispatch = useDispatch()
+	const router = useRouter()
 
 	const handleClick = () => {
 		dispatch(
@@ -28,33 +26,33 @@ const Email = (props) => {
 				email: name,
 				message: message,
 			}),
-		);
+		)
 
-		router.push("/mail");
-	};
+		router.push('/mail')
+	}
 
 	return (
 		<EmailWrapper
 			onClick={handleClick}
 			style={{
-				background: background ? "rgba(220, 227, 232)" : "transparent",
+				background: background ? 'rgba(220, 227, 232)' : 'transparent',
 			}}>
-			<div className='headding-conent'>
-				<div className='mail__icons'>
+			<div className="headding-conent">
+				<div className="mail__icons">
 					<CheckBoxOutlineBlankRoundedIcon />
 					<StarBorderRoundedIcon />
 				</div>
 
-				<div className='mail-name'>{name}</div>
+				<div className="mail-name">{name}</div>
 			</div>
 
-			<div className='mail__content'>{truncate(message, 90)}</div>
-			<div className='mail-date'>{date} </div>
+			<div className="mail__content">{truncate(message, 90)}</div>
+			<div className="mail-date">{date} </div>
 		</EmailWrapper>
-	);
-};
+	)
+}
 
-export default Email;
+export default Email
 const EmailWrapper = styled.div`
 	display: flex;
 	align-items: center;
@@ -104,4 +102,4 @@ const EmailWrapper = styled.div`
 		font-weight: bold;
 		margin-left: 1rem;
 	}
-`;
+`
