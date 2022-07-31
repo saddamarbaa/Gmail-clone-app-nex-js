@@ -1,6 +1,6 @@
 # Gmail Clone
 
- Building Gmail Clone App with React Js, Next Js, Redux, Styled Component, 
+ Building Gmail Clone App with React Js, Next Js, TypeScript, Redux, Styled Component, 
  Material-UI, Firebase Realtime Database, Vercel Hosting, 
  with complete user authentication (a mobile-friendly).
 
@@ -37,6 +37,7 @@
 
 -  React Js
 -  Next Js
+-  TypeScript
 -  Redux
 -  Styled Component
 -  Material-UI
@@ -44,7 +45,7 @@
 **Server:**
 
 -  Firebase Realtime Database
--  Firebase Hosting
+-  Vercel Hosting 
 -  Firebase Google Authentication
 
 
